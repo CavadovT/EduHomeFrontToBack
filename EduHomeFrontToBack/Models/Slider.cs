@@ -1,7 +1,10 @@
-﻿namespace EduHomeFrontToBack.Models
+﻿using System;
+
+namespace EduHomeFrontToBack.Models
 {
-    public class Slider:BaseEntity
+    public class Slider
     {
+        public int Id { get; set; }
         public string ImgUrl { get; set; }
     }
 }
