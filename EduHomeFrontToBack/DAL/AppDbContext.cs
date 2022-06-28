@@ -9,8 +9,7 @@ namespace EduHomeFrontToBack.DAL
         {
 
         }
-        public DbSet<Biografiy> Biografiys { get; set; }
-        public DbSet<InformationBoard> InformationBoards { get; set; }
+        public DbSet<Biografy> Biografiys { get; set; }
         public DbSet<NoticeBoard> NoticeBoards { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<SliderContent> SliderContents { get; set; }

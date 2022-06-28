@@ -17,7 +17,7 @@ namespace EduHomeFrontToBack.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            Biografiy bio = _context.Biografiys.FirstOrDefault();
+            Biografy bio = _context.Biografiys.FirstOrDefault();
             return View(await Task.FromResult(bio));
 
         }
