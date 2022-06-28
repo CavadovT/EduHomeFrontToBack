@@ -35,6 +35,9 @@ namespace EduHomeFrontToBack.DAL
         public DbSet<TestimonialArea> TestimonialAreas { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<VideoTour> VideoTours { get; set; }
+        public DbSet<CourseCategory> CourseCategories { get; set; }
+        public DbSet<CourseUser> CourseUsers { get; set; }
+        public DbSet<Course> Courses { get; set; }
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using EduHomeFrontToBack.DAL;
 using EduHomeFrontToBack.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,7 +18,8 @@ namespace EduHomeFrontToBack.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            Biografy bio = _context.Biografiys.FirstOrDefault();
+            Biografy bio = _context.Biografiys.Include(b=>b.SocialAccount).FirstOrDefault();
+
             return View(await Task.FromResult(bio));
 
         }

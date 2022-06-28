@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Email { get; set; }
         public string Skype { get; set; }
-        public double PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

@@ -7,6 +7,5 @@
         public string Pinterest { get; set; }
         public string Vkontakt { get; set; }
         public string Twitter { get; set; }
-
     }
 }

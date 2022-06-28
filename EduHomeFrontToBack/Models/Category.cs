@@ -8,6 +8,7 @@ namespace EduHomeFrontToBack.Models
         public string Name { get; set; }
         public List<CategoryEvent> CategoryEvents { get; set; }
         public List<CategoryTeacher> CategoryTeachers { get; set; }
+        public List<CourseCategory> CourseCategories { get; set; }
 
 
     }

@@ -62,7 +62,7 @@ namespace EduHomeFrontToBack.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(nullable: true),
                     Skype = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<double>(nullable: false)
+                    PhoneNumber = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -310,10 +310,9 @@ namespace EduHomeFrontToBack.Migrations
                     ImgUrl = table.Column<string>(nullable: true),
                     Author = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<decimal>(nullable: false),
+                    PhoneNumber = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
-                    SocialAcoountId = table.Column<int>(nullable: false),
-                    SocialAccountId = table.Column<int>(nullable: true)
+                    SocialAccountId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -323,7 +322,7 @@ namespace EduHomeFrontToBack.Migrations
                         column: x => x.SocialAccountId,
                         principalTable: "SocialAccounts",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

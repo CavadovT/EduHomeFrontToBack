@@ -3,14 +3,16 @@ using EduHomeFrontToBack.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EduHomeFrontToBack.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220628132204_AddTables")]
+    partial class AddTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,104 +187,6 @@ namespace EduHomeFrontToBack.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contacts");
-                });
-
-            modelBuilder.Entity("EduHomeFrontToBack.Models.Course", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AboutCourse")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Assesments")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Certification")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClassDuration")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("CoursePrice")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Duration")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HowToApply")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Language")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LeaveAReplay")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SkillLevel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StartTime")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StudentsCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Courses");
-                });
-
-            modelBuilder.Entity("EduHomeFrontToBack.Models.CourseCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("CourseId");
-
-                    b.ToTable("CourseCategories");
-                });
-
-            modelBuilder.Entity("EduHomeFrontToBack.Models.CourseUser", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("CourseUsers");
                 });
 
             modelBuilder.Entity("EduHomeFrontToBack.Models.Event", b =>
@@ -740,36 +644,6 @@ namespace EduHomeFrontToBack.Migrations
                     b.HasOne("EduHomeFrontToBack.Models.Teacher", "Teacher")
                         .WithMany("CategoryTeachers")
                         .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("EduHomeFrontToBack.Models.CourseCategory", b =>
-                {
-                    b.HasOne("EduHomeFrontToBack.Models.Category", "Category")
-                        .WithMany("CourseCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EduHomeFrontToBack.Models.Course", "Course")
-                        .WithMany("CourseCategories")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("EduHomeFrontToBack.Models.CourseUser", b =>
-                {
-                    b.HasOne("EduHomeFrontToBack.Models.Course", "Course")
-                        .WithMany("CourseUsers")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EduHomeFrontToBack.Models.User", "User")
-                        .WithMany("CourseUsers")
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

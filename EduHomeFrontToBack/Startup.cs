@@ -44,7 +44,7 @@ namespace EduHomeFrontToBack
             {
                 endpoints.MapControllerRoute(
                     "default",
-                    "{Controller=Home}/{Action=Index}/{Id?}"
+                    "{Controller=home}/{Action=Index}/{Id?}"
                     );
             });
         }
