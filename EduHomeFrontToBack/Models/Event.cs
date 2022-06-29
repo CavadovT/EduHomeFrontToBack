@@ -5,6 +5,7 @@ namespace EduHomeFrontToBack.Models
     public class Event
     {
         public int Id { get; set; }
+        public string ImgUrl { get; set; }
         public string Day { get; set; }//datatime tipinden eslinde
         public string Month { get; set; }//datatime tipinden 
         public string Title { get; set; }

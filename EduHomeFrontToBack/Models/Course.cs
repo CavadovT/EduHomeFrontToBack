@@ -11,6 +11,7 @@ namespace EduHomeFrontToBack.Models
         public string Certification { get; set; }
         public string LeaveAReplay { get; set; }
         public string Title { get; set; }
+        public string Description { get; set; }
         public string StartTime { get; set; }
         public string Duration { get; set; }
         public string ClassDuration { get; set; }
@@ -21,6 +22,5 @@ namespace EduHomeFrontToBack.Models
         public double CoursePrice { get; set; }
         public List<CourseCategory> CourseCategories { get; set; }
         public List<CourseUser> CourseUsers { get; set; }
-
     }
 }

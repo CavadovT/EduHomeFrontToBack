@@ -2,7 +2,7 @@
 
 namespace EduHomeFrontToBack.Migrations
 {
-    public partial class AddTableCourseCourseCategory : Migration
+    public partial class NewUpdateCourse : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,6 +18,7 @@ namespace EduHomeFrontToBack.Migrations
                     Certification = table.Column<string>(nullable: true),
                     LeaveAReplay = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
                     StartTime = table.Column<string>(nullable: true),
                     Duration = table.Column<string>(nullable: true),
                     ClassDuration = table.Column<string>(nullable: true),

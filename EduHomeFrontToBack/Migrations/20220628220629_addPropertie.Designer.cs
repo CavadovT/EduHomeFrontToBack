@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduHomeFrontToBack.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220628174624_AddTableCourseCourseCategory")]
-    partial class AddTableCourseCourseCategory
+    [Migration("20220628220629_addPropertie")]
+    partial class addPropertie
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -210,6 +210,9 @@ namespace EduHomeFrontToBack.Migrations
 
                     b.Property<double>("CoursePrice")
                         .HasColumnType("float");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Duration")
                         .HasColumnType("nvarchar(max)");
